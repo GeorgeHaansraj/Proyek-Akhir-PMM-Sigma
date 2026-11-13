@@ -12,13 +12,10 @@ TugasAkhir/
 │   ├── images/                 # File gambar yang dirujuk oleh CSV
 │   ├── train_clean.csv
 │   └── val_clean.csv
-├── M0/
 ├── M1/
 │   ├── pipeline-image-captioning-clip-vit-b-32.ipynb
 │   └── README.md               # File ini
-├── M2/
-├── Output/                     # Lokasi hasil evaluasi
-└── README.md
+└── Output/                     # Lokasi hasil evaluasi
 ```
 
 `val_clean.csv` perlu memiliki kolom `file`, `caption_id`, dan `caption_en`. Nilai pada kolom `file` harus sesuai dengan nama file gambar di folder `images/`. Notebook saat ini menggunakan data validasi (`val_clean.csv`); `train_clean.csv` dan `PATH_TRAIN` disiapkan sebagai referensi, tetapi belum digunakan dalam proses notebook.
@@ -36,6 +33,7 @@ PATH_TRAIN = "/kaggle/input/datasets/geogeogeogeogeo/train-data/"
 PATH_VAL = "/kaggle/input/datasets/geogeogeogeogeo/validation-data/"
 PATH_IMAGES = "/kaggle/input/datasets/geogeogeogeogeo/images/"
 PATH_OUTPUT = "/kaggle/working/hasil_evaluasi.json"
+Note: sesuaikan dengan path anda. "/kaggle/input/datasets/geogeogeogeogeo" adalah path penulis.
 ```
 
 `PATH_IMAGES` harus menunjuk langsung ke folder tempat file gambar berada. Jika file gambar tersimpan di subfolder `images/`, tambahkan subfolder tersebut pada path. Untuk memeriksa lokasi file yang tersedia, jalankan:
@@ -89,7 +87,7 @@ PATH_OUTPUT = "../Output/hasil_evaluasi.json"
 3. Siapkan environment Python, kemudian instal pustaka yang diperlukan:
 
 ```bash
-pip install pandas numpy matplotlib pillow sentence-transformers
+pip install numpy torch transformers sentence-transformers pillow pandas matplotlib ipython
 ```
 
 Jika PyTorch belum terinstal atau ingin menggunakan GPU, instal versi PyTorch yang sesuai dengan sistem operasi dan CUDA melalui panduan resmi PyTorch. 4. Jalankan seluruh sel notebook secara berurutan. Pastikan komputer terhubung ke internet saat model CLIP pertama kali diunduh. Hasil evaluasi akan disimpan ke folder `Output`.

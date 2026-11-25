@@ -1,0 +1,25 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# VS Code settings
+.vscode/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Output directories and local cache
+Output/
+**/Output/
+**/cache_m2/
+*.pt
+*.npy
+*.zip
